@@ -39,13 +39,7 @@ function MyWork() {
               )}
 
               <div className="mywork-links">
-                <a
-                  href={work.w_demo || "#"}
-                  target={work.w_demo && work.w_demo !== "#" ? "_blank" : "_self"}
-                  rel="noreferrer"
-                >
-                  Live Demo
-                </a>
+               
                 <a
                   href={work.w_code || "#"}
                   target={work.w_code && work.w_code !== "#" ? "_blank" : "_self"}

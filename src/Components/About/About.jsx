@@ -59,30 +59,27 @@ function About() {
       <div className="about-sections">
         <div className="about-left"></div>
 
-        {/* RIGHT SECTION WITH STAGGER */}
+        {/* RIGHT SECTION */}
         <motion.div
           className="about-right"
           variants={staggerContainer}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true }}
         >
-          {/* ABOUT PARAGRAPHS */}
+          {/* ABOUT TEXT */}
           <motion.div
             className="about-para"
             variants={fadeIn("up", "tween", 0.2, 0.7)}
           >
             <p>
               I'm a Software Engineering undergraduate driven by creating
-              intuitive user experiences and
-              <strong>efficient full-stack solutions</strong>. I enjoy
-              transforming ideas into polished, functional applications.
+              intuitive user experiences and{" "}
+              <strong>efficient full-stack solutions</strong>.
             </p>
-
             <p>
-              From Kotlin-based mobile apps to JavaScript-powered web systems, I
-              continuously refine my skills, learn new tools, and build projects
-              that balance performance and usability.
+              From mobile apps to JavaScript-powered web systems, I continuously
+              learn and build real-world projects.
             </p>
           </motion.div>
 
@@ -99,6 +96,7 @@ function About() {
             >
               Skills
             </p>
+
             <p
               className={`tab-link ${
                 activeTab === "experience" ? "active-link" : ""
@@ -107,6 +105,7 @@ function About() {
             >
               Experience
             </p>
+
             <p
               className={`tab-link ${
                 activeTab === "education" ? "active-link" : ""
@@ -118,18 +117,16 @@ function About() {
           </motion.div>
 
           {/* TAB CONTENT */}
-          <motion.div
-            className="tab-content active-tab"
-            variants={fadeIn("up", "tween", 0.3, 0.8)}
-          >
-            {/* SKILLS TAB */}
+          <div className="tab-content">
+            {/* SKILLS */}
             {activeTab === "skills" && (
-              <>
-                {/* Skill Category Pills */}
-                <motion.div
-                  className="about-tabs"
-                  variants={fadeIn("up", "tween", 0.2, 0.7)}
-                >
+              <motion.div
+                key="skills"
+                variants={fadeIn("up", "tween", 0.3, 0.8)}
+                initial="hidden"
+                animate="show"
+              >
+                <div className="about-tabs">
                   {Object.keys(skillsData).map((category) => (
                     <button
                       key={category}
@@ -141,9 +138,8 @@ function About() {
                       {category}
                     </button>
                   ))}
-                </motion.div>
+                </div>
 
-                {/* Skills List */}
                 <div className="about-skills-list">
                   {skillsData[activeSkillCategory].map((skill, index) => (
                     <motion.div
@@ -160,75 +156,61 @@ function About() {
                         <motion.div
                           className="about-skill-bar-fill"
                           initial={{ width: 0 }}
-                          whileInView={{ width: `${skill.level}%` }}
-                          transition={{ duration: 1, delay: index * 0.1 }}
-                          viewport={{ once: true }}
-                        ></motion.div>
+                          animate={{ width: `${skill.level}%` }}
+                          transition={{ duration: 1 }}
+                        />
                       </div>
 
-                      <span className="about-skill-percent">
-                        {skill.level}%
-                      </span>
+                      <span>{skill.level}%</span>
                     </motion.div>
                   ))}
                 </div>
-              </>
+              </motion.div>
             )}
 
-            {/* EXPERIENCE TAB */}
+            {/* EXPERIENCE */}
             {activeTab === "experience" && (
               <motion.ul
+                key="experience"
                 className="about-experience"
-                variants={fadeIn("up", "tween", 0.2, 0.7)}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
               >
-                <li>Developed full-stack web applications using MERN Stack</li>
-                <li>Built Android mobile applications with Kotlin</li>
-                <li>
-                  Designed database schemas for MongoDB and MySQL projects
-                </li>
-                <li>Collaborated on group projects using Git & GitHub</li>
-                <li>Created responsive UI/UX with Figma & Tailwind CSS</li>
+                <li>Developed full-stack applications using MERN Stack</li>
+                <li>Built Android applications using Kotlin</li>
+                <li>Designed MongoDB & MySQL database schemas</li>
+                <li>Collaborated with teams using Git & GitHub</li>
+                <li>Created responsive UI using Tailwind CSS</li>
               </motion.ul>
             )}
 
-            {/* EDUCATION TAB */}
+            {/* EDUCATION */}
             {activeTab === "education" && (
               <motion.ul
+                key="education"
                 className="about-education"
-                variants={fadeIn("up", "tween", 0.2, 0.7)}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
               >
                 <li>
-                  <strong>BSc (Hons) in Information Technology</strong> – SLIIT
-                  <span
-                    style={{
-                      display: "block",
-                      fontSize: "0.85rem",
-                      color: "#9ca3af",
-                      marginTop: "4px",
-                    }}
-                  >
-                    Focus: Full-Stack Development, Mobile Development, Database
-                    Systems
+                  <strong>BSc (Hons) in Information Technology at  SLIIT</strong> – 
+
+                  <span className="sub-text">
+                       Full-Stack, Mobile & Database Systems
                   </span>
                 </li>
 
                 <li>
-                  <strong>Full Stack Development Bootcamp</strong> – Udemy &
-                  Self-Learning
-                  <span
-                    style={{
-                      display: "block",
-                      fontSize: "0.85rem",
-                      color: "#9ca3af",
-                      marginTop: "4px",
-                    }}
-                  >
-                    MERN Stack, RESTful APIs, Modern JavaScript, Git Workflows
+                  <strong>Full Stack Development</strong> – 
+                  <span className="sub-text">
+                    MERN Stack, REST APIs, Git
                   </span>
                 </li>
               </motion.ul>
             )}
-          </motion.div>
+          </div>
         </motion.div>
       </div>
     </div>

@@ -30,8 +30,8 @@ function Hero() {
         <p className="hero-description">
           I enjoy turning ideas into reliable, user-friendly applications as I
           grow as a developer. From{" "}
-          <span className="hero-highlight">MERN web apps</span> to
-          <span className="hero-highlight"> Android projects in Kotlin</span>, I
+          <span className="hero-highlight"> web apps</span> to
+          <span className="hero-highlight"> Android projects </span>, I
           focus on clear structure, responsiveness, and writing code that is
           easy to maintain and scale.
         </p>
