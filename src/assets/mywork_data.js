@@ -45,7 +45,7 @@ const mywork_data = [
     w_name: "WellnessHub – Android Health App",
     w_desc:
       "Android application for habit tracking, mood journaling, hydration reminders, and analytics using SharedPreferences and notifications.",
-    w_img: wellnesshub,
+    w_img: calmora,
     w_tech: ["Kotlin", "Android", "SharedPreferences", "Notifications"],
     w_demo: "#",
     w_code: "https://github.com/methma490/wellnesshub",
@@ -55,7 +55,7 @@ const mywork_data = [
     w_name: "Calmora – Student Productivity App",
     w_desc:
       "Productivity-focused Android app for task scheduling, deadline tracking, and daily study logging designed using Material Design principles.",
-    w_img: calmora,
+    w_img: wellnesshub,
     w_tech: ["Kotlin", "Android", "Material Design"],
     w_demo: "#",
     w_code: "https://github.com/methma490/Calmora",
