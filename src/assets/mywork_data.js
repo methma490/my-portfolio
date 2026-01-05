@@ -1,11 +1,12 @@
-/*import greengrow from "./projects/greengrow.png";
-import hms from "./projects/hms.png";
-import autohub from "./projects/autohub.png";
-import wellnesshub from "./projects/wellnesshub.png";
-import calmora from "./projects/calmora.png";*/
+import greengrow from "../images/agri.jpg";
+import hms from "../images/hospital.jpeg";
+import autohub from "../images/car.jpg";
+import wellnesshub from "../images/study.jpg";
+import calmora from "../images/habit.jpg";
 
-const placeholder =
-  "https://via.placeholder.com/600x400?text=Project+Preview";
+
+
+
 
 const mywork_data = [
   {
@@ -13,7 +14,7 @@ const mywork_data = [
     w_name: "GreenGrow – Agriculture Management System",
     w_desc:
       "MERN-based consultant booking system enabling appointment scheduling, admin dashboards, and secure CRUD operations using JWT authentication.",
-    w_img: placeholder,
+    w_img: greengrow,
     w_tech: ["React", "Node.js", "Express", "MongoDB", "JWT", "Tailwind"],
     w_demo: "#",
     w_code:
@@ -24,7 +25,7 @@ const mywork_data = [
     w_name: "Hospital Management System",
     w_desc:
       "Java web application built using MVC architecture with JSP and Servlets for appointment booking, doctor management, and admin CRUD operations.",
-    w_img: placeholder,
+    w_img: hms,
     w_tech: ["Java", "JSP", "Servlets", "MySQL", "MVC"],
     w_demo: "#",
     w_code: "https://github.com/methma490/HMS-part-methma",
@@ -34,7 +35,7 @@ const mywork_data = [
     w_name: "AutoHub – Online Advertising Platform",
     w_desc:
       "Online vehicle advertising system supporting ad posting, membership plans, profile management, and responsive user interfaces.",
-    w_img: placeholder,
+    w_img: autohub,
     w_tech: ["JavaScript", "PHP", "HTML", "CSS", "MySQL"],
     w_demo: "#",
     w_code: "https://github.com/methma490/AutoHub",
@@ -44,7 +45,7 @@ const mywork_data = [
     w_name: "WellnessHub – Android Health App",
     w_desc:
       "Android application for habit tracking, mood journaling, hydration reminders, and analytics using SharedPreferences and notifications.",
-    w_img: placeholder,
+    w_img: wellnesshub,
     w_tech: ["Kotlin", "Android", "SharedPreferences", "Notifications"],
     w_demo: "#",
     w_code: "https://github.com/methma490/wellnesshub",
@@ -54,7 +55,7 @@ const mywork_data = [
     w_name: "Calmora – Student Productivity App",
     w_desc:
       "Productivity-focused Android app for task scheduling, deadline tracking, and daily study logging designed using Material Design principles.",
-    w_img: placeholder,
+    w_img: calmora,
     w_tech: ["Kotlin", "Android", "Material Design"],
     w_demo: "#",
     w_code: "https://github.com/methma490/Calmora",
