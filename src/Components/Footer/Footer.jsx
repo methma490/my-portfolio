@@ -1,6 +1,6 @@
 // Footer.jsx
-import React, { useState } from "react";
-import "./Footer.css";
+import React, { useState } from 'react';
+import './Footer.css';
 
 function Footer() {
   const [email, setEmail] = useState("");
@@ -14,13 +14,7 @@ function Footer() {
     }
   };
 
-  const socialLinks = [
-    { name: "GitHub", icon: "🔗", url: "#" },
-    { name: "LinkedIn", icon: "💼", url: "#" },
-    { name: "Twitter", icon: "🐦", url: "#" },
-    { name: "Email", icon: "✉️", url: "#" }
-  ];
-
+  
   return (
     <footer className="footer">
       <div className="gradient-overlay"></div>

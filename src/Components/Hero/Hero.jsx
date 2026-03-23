@@ -3,7 +3,7 @@ import "./Hero.css";
 import hero from "../../assets/hero.jpg";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { motion } from "framer-motion";
-import { slideIn, staggerContainer, textVariant } from "../Animate/Animate";
+import { fadeIn, staggerContainer, textVariant, slideIn } from "../Animate/Animate";
 
 function Hero() {
   return (

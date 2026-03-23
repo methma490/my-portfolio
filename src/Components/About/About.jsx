@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import "./About.css";
 import theme_pattern from "../../assets/theme_pattern.svg";
-import { motion } from "framer-motion";
-import { fadeIn, staggerContainer } from "../Animate/Animate";
+import { fadeIn, staggerContainer } from '../Animate/Animate';
+import AboutCard from './AboutCard';
+import FloatingShapes from './FloatingShapes';
 
 const skillsData = {
   Frontend: [
@@ -43,6 +45,7 @@ function About() {
 
   return (
     <div id="about" className="about">
+      <FloatingShapes />
       {/* TITLE */}
       <div className="about-title">
         <motion.h1
@@ -57,7 +60,9 @@ function About() {
       </div>
 
       <div className="about-sections">
-        <div className="about-left"></div>
+        <div className="about-left">
+          <AboutCard />
+        </div>
 
         {/* RIGHT SECTION */}
         <motion.div

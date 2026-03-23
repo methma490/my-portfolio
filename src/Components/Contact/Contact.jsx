@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import "./Contact.css";
 import theme_pattern from "../../assets/theme_pattern.svg";
 import mail_icon from "../../assets/mail_icon.svg";
@@ -8,7 +9,6 @@ import linkedin from "../../assets/linkedin.svg";
 import github from "../../assets/github.svg";
 import facebook from "../../assets/facebook.svg";
 import instagram from "../../assets/instagram.svg";
-import { motion } from 'framer-motion';
 
 
 const containerVariants = {

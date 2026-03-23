@@ -1,11 +1,8 @@
-import React, { useRef, useState } from 'react';
-import './Navbar.css';
-//import logo from '../../assets/logo.svg';
+import React, { useState, useRef } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
-import menu_open from '../../assets/menu_open.svg';
+import './Navbar.css';
 import menu_close from '../../assets/menu_close.svg';
-import { motion } from 'framer-motion';
-import { navVariants } from '../Animate/Animate';
+import menu_open from '../../assets/menu_open.svg';
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,7 +20,7 @@ function Navbar() {
 
   return (
     
-    <motion.div variants={navVariants} initial='hidden' whileInView='show' className='navbar'>
+    <div className='navbar'>
      {/*} <img className='logo' src={logo} alt="Logo" />*/}
 
       {/* Show menu open icon only when menu is closed */}
@@ -56,7 +53,7 @@ function Navbar() {
       <div className='nav-connect'>
         <AnchorLink className='anchor-link' offset={50} href='#contact'>Connect With Me</AnchorLink>
       </div>
-    </motion.div>
+    </div>
   );
 }
 

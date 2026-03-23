@@ -13,16 +13,21 @@
 }
 
 .hero-left h1 {
-  font-size: clamp(2.4rem, 3vw + 1rem, 3.4rem);
-  line-height: 1.1;
-  margin-bottom: 18px;
+  font-size: clamp(3rem, 4vw + 1.5rem, 4.5rem);
+  line-height: 1.05;
+  margin-bottom: 28px;
+  font-weight: 700;
+  text-shadow: 0 0 30px rgba(34, 197, 94, 0.3);
 }
 
 .hero-left h1 span {
   display: inline-block;
-  background: linear-gradient(120deg, #22c55e, #0ea5e9);
+  background: linear-gradient(135deg, #22c55e 0%, #0ea5e9 25%, #10b981 50%, #22c55e 75%, #0ea5e9 100%);
   -webkit-background-clip: text;
-  color: transparent;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
 }
 
 .hero-subtitle {
@@ -31,6 +36,10 @@
   text-transform: uppercase;
   color: #9ca3af;
   margin-bottom: 8px;
+  background: linear-gradient(135deg, #22c55e, #0ea5e9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .hero-tagline {
@@ -47,7 +56,10 @@
 }
 
 .hero-highlight {
-  color: #a5b4fc;
+  background: linear-gradient(135deg, #22c55e, #0ea5e9, #10b981);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-weight: 500;
 }
 
@@ -71,26 +83,35 @@
 }
 
 .hero-connect {
-  border: 1px solid rgba(34, 197, 94, 0.8);
-  background: radial-gradient(circle at top left, rgba(34, 197, 94, 0.25), transparent),
-              radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.2), transparent),
-              rgba(15, 23, 42, 0.92);
-  box-shadow: 0 18px 48px rgba(15, 118, 110, 0.7);
+  border: 2px solid rgba(34, 197, 94, 0.9);
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.3), rgba(14, 165, 233, 0.3));
+  backdrop-filter: blur(15px);
+  box-shadow: 0 12px 40px rgba(34, 197, 94, 0.4);
+  animation: buttonGlow 2s ease-in-out infinite;
 }
 
 .hero-resume {
- border: 1px solid rgba(34, 197, 94, 0.8);
-  background: radial-gradient(circle at top left, rgba(34, 197, 94, 0.25), transparent),
-              radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.2), transparent),
-              rgba(15, 23, 42, 0.92);
-  box-shadow: 0 18px 48px rgba(15, 118, 110, 0.7);
+ border: 2px solid rgba(14, 165, 233, 0.9);
+ background: linear-gradient(135deg, rgba(14, 165, 233, 0.3), rgba(34, 197, 94, 0.3));
+ backdrop-filter: blur(15px);
+ box-shadow: 0 12px 40px rgba(14, 165, 233, 0.4);
+ animation: buttonGlow 2s ease-in-out infinite;
+}
+
+@keyframes buttonGlow {
+  0%, 100% { 
+    box-shadow: 0 12px 40px rgba(34, 197, 94, 0.4);
+  }
+  50% { 
+    box-shadow: 0 15px 50px rgba(34, 197, 94, 0.6);
+  }
 }
 
 .hero-connect:hover,
 .hero-resume:hover {
-  transform: translateY(-1px) scale(1.02);
-  border-color: rgba(16, 185, 129, 0.9);
-  box-shadow: 0 18px 45px rgba(15, 118, 110, 0.75);
+  transform: translateY(-2px) scale(1.05);
+  border-color: rgba(34, 197, 94, 0.9);
+  box-shadow: 0 12px 40px 0 rgba(34, 197, 94, 0.4);
 }
 
 .hero-resume:hover {
@@ -106,11 +127,22 @@
 }
 
 .hero-right img {
-  width: min(320px, 80vw);
+  width: min(380px, 85vw);
   border-radius: 50%;
   object-fit: cover;
-  border: none;
-  box-shadow: none;
+  border: 4px solid rgba(34, 197, 94, 0.4);
+  box-shadow: 0 0 50px rgba(34, 197, 94, 0.5),
+              0 0 100px rgba(14, 165, 233, 0.3),
+              0 0 150px rgba(16, 185, 129, 0.2);
+  animation: float 8s ease-in-out infinite;
+  transition: all 0.4s ease;
+}
+
+.hero-right img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 60px rgba(34, 197, 94, 0.7),
+              0 0 120px rgba(14, 165, 233, 0.4),
+              0 0 180px rgba(16, 185, 129, 0.3);
 }
 
 /* Small eye-candy glow behind the image */
@@ -120,10 +152,16 @@
   width: 210px;
   height: 210px;
   border-radius: 999px;
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.18), transparent 70%);
-  filter: blur(10px);
+  background: radial-gradient(circle, rgba(34, 197, 94, 0.3), transparent 70%);
+  filter: blur(20px);
   transform: translateY(20px);
   z-index: -1;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: translateY(20px) scale(1); }
+  50% { transform: translateY(20px) scale(1.1); }
 }
 
 /* Responsive */

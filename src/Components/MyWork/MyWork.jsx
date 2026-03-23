@@ -4,12 +4,14 @@ import theme_pattern from "../../assets/theme_pattern.svg";
 import mywork_data from "../../assets/mywork_data";
 import arrow_icon from "../../assets/arrow_icon.svg";
 import { motion } from 'framer-motion';
-import { fadeIn, staggerContainer, textVariant } from '../Animate/Animate';
+import { fadeIn, staggerContainer } from '../Animate/Animate';
+import WorkShapes from './WorkShapes';
 
 function MyWork() {
   return (
     <motion.div id="work" className="mywork section-fade-in" variants={staggerContainer(0.2, 0.1)} initial='hidden' whileInView='show' viewport={{ once: false, amount: 0.25 }}>
-      <motion.div className="mywork-title" variants={textVariant(0.5)}>
+      <WorkShapes />
+      <motion.div className="mywork-title">
         <h1>Projects</h1>
         <img src={theme_pattern} alt="pattern" />
       </motion.div>
