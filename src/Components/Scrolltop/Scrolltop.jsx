@@ -1,39 +1,39 @@
-import React, { useEffect, useState } from "react";
-import "./Scrolltop.css";
-import { FaArrowUp } from "react-icons/fa";
+import { useEffect, useState } from 'react'
+import { FaArrowUp } from 'react-icons/fa'
 
 function ScrollToTop() {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(false)
 
-  const toggleVisibility = () => {
-    if (window.scrollY > 300) {
-      setIsVisible(true);
-    } else {
-      setIsVisible(false);
+  useEffect(() => {
+    const toggleVisibility = () => {
+      setIsVisible(window.scrollY > 300)
     }
-  };
+
+    window.addEventListener('scroll', toggleVisibility)
+    return () => window.removeEventListener('scroll', toggleVisibility)
+  }, [])
 
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
-    });
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", toggleVisibility);
-    return () => window.removeEventListener("scroll", toggleVisibility);
-  }, []);
+      behavior: 'smooth',
+    })
+  }
 
   return (
     <>
       {isVisible && (
-        <div className="scroll-to-top" onClick={scrollToTop}>
+        <button
+          className="fixed bottom-6 right-6 z-50 inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/12 bg-[#0b1524]/84 text-brand-300 shadow-[0_18px_40px_rgba(0,0,0,0.36)] backdrop-blur transition hover:-translate-y-1 hover:border-brand-400/40 hover:bg-[#112036] hover:text-white"
+          onClick={scrollToTop}
+          type="button"
+          aria-label="Scroll to top"
+        >
           <FaArrowUp />
-        </div>
+        </button>
       )}
     </>
-  );
+  )
 }
 
-export default ScrollToTop;
+export default ScrollToTop

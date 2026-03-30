@@ -1,65 +1,55 @@
-import greengrow from "../images/agri.jpg";
-import hms from "../images/hospital.jpeg";
-import autohub from "../images/car.jpg";
-import wellnesshub from "../images/study.jpg";
-import calmora from "../images/habit.jpg";
+import greengrow from '../images/agri.jpg'
+import hms from '../images/hospital.jpeg'
+import autohub from '../images/car.jpg'
+import calmora from '../images/habit.jpg'
+import wellnesshub from '../images/study.jpg'
 
-
-
-
-
-const mywork_data = [
+const myworkData = [
   {
-    w_no: 1,
-    w_name: "GreenGrow – Agriculture Management System",
-    w_desc:
-      "MERN-based consultant booking system enabling appointment scheduling, admin dashboards, and secure CRUD operations using JWT authentication.",
-    w_img: greengrow,
-    w_tech: ["React", "Node.js", "Express", "MongoDB", "JWT", "Tailwind"],
-    w_demo: "#",
-    w_code:
-      "https://github.com/methma490/Online-Agriculture-Management-System",
+    id: 1,
+    title: 'GreenGrow Agriculture Management System',
+    description:
+      'A MERN-based agriculture platform for consultant booking, appointment handling, dashboard views, and secure CRUD operations.',
+    image: greengrow,
+    tech: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT'],
+    github: 'https://github.com/methma490/Online-Agriculture-Management-System',
   },
   {
-    w_no: 2,
-    w_name: "Hospital Management System",
-    w_desc:
-      "Java web application built using MVC architecture with JSP and Servlets for appointment booking, doctor management, and admin CRUD operations.",
-    w_img: hms,
-    w_tech: ["Java", "JSP", "Servlets", "MySQL", "MVC"],
-    w_demo: "#",
-    w_code: "https://github.com/methma490/HMS-part-methma",
+    id: 2,
+    title: 'Hospital Management System',
+    description:
+      'A Java web application using JSP, Servlets, and MVC to support appointments, doctor records, and admin workflows.',
+    image: hms,
+    tech: ['Java', 'JSP', 'Servlets', 'MySQL', 'MVC'],
+    github: 'https://github.com/methma490/HMS-part-methma',
   },
   {
-    w_no: 3,
-    w_name: "AutoHub – Online Advertising Platform",
-    w_desc:
-      "Online vehicle advertising system supporting ad posting, membership plans, profile management, and responsive user interfaces.",
-    w_img: autohub,
-    w_tech: ["JavaScript", "PHP", "HTML", "CSS", "MySQL"],
-    w_demo: "#",
-    w_code: "https://github.com/methma490/AutoHub",
+    id: 3,
+    title: 'AutoHub Advertising Platform',
+    description:
+      'A vehicle advertising system with profile handling, ad posting, membership features, and responsive front-end pages.',
+    image: autohub,
+    tech: ['JavaScript', 'PHP', 'HTML', 'CSS', 'MySQL'],
+    github: 'https://github.com/methma490/AutoHub',
   },
   {
-    w_no: 4,
-    w_name: "WellnessHub – Android Health App",
-    w_desc:
-      "Android application for habit tracking, mood journaling, hydration reminders, and analytics using SharedPreferences and notifications.",
-    w_img: calmora,
-    w_tech: ["Kotlin", "Android", "SharedPreferences", "Notifications"],
-    w_demo: "#",
-    w_code: "https://github.com/methma490/wellnesshub",
+    id: 4,
+    title: 'WellnessHub Android App',
+    description:
+      'An Android app for habit tracking, reminders, journaling, and simple analytics using Kotlin and SharedPreferences.',
+    image: wellnesshub,
+    tech: ['Kotlin', 'Android', 'SharedPreferences'],
+    github: 'https://github.com/methma490/wellnesshub',
   },
   {
-    w_no: 5,
-    w_name: "Calmora – Student Productivity App",
-    w_desc:
-      "Productivity-focused Android app for task scheduling, deadline tracking, and daily study logging designed using Material Design principles.",
-    w_img: wellnesshub,
-    w_tech: ["Kotlin", "Android", "Material Design"],
-    w_demo: "#",
-    w_code: "https://github.com/methma490/Calmora",
+    id: 5,
+    title: 'Calmora Student Productivity App',
+    description:
+      'A productivity-focused Android application for planning tasks, tracking deadlines, and supporting study routines.',
+    image: calmora,
+    tech: ['Kotlin', 'Android', 'Material Design'],
+    github: 'https://github.com/methma490/Calmora',
   },
-];
+]
 
-export default mywork_data;
+export default myworkData

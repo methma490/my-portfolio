@@ -1,4 +1,3 @@
-import React from 'react'
 import Navbar from './Components/Navbar/Navbar'
 import Hero from './Components/Hero/Hero'
 import About from './Components/About/About'
@@ -10,16 +9,17 @@ import Particles from './Components/Particles/Particles'
 
 function App() {
   return (
-    <div>
-      <Particles/>
-      <Navbar/>
-      <Hero/>
-      <About/>
-      <MyWork/>
-      <Contact/>
-      <Scrolltop/>
-      <Footer/>
-      
+    <div className="relative min-h-screen overflow-x-clip text-slate-100">
+      <Particles />
+      <Navbar />
+      <main className="relative z-10">
+        <Hero />
+        <About />
+        <MyWork />
+        <Contact />
+      </main>
+      <Footer />
+      <Scrolltop />
     </div>
   )
 }

@@ -1,9 +1,0 @@
-#root {
-  width: 100%;
-  min-height: 100vh;
-}
-
-/* Utility container if you want to wrap inner content later */
-.app-shell {
-  width: 100%;
-}

@@ -1,64 +1,142 @@
-import React from "react";
-import "./Hero.css";
-import hero from "../../assets/hero.jpg";
-import AnchorLink from "react-anchor-link-smooth-scroll";
-import { motion } from "framer-motion";
-import { fadeIn, staggerContainer, textVariant, slideIn } from "../Animate/Animate";
+import { motion, useReducedMotion } from 'framer-motion'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
+import hero from '../../assets/hero.jpg'
+import { fadeUp, scaleIn, stagger } from '../Animate/Animate'
+
+const highlights = ['Frontend & Backend', 'Responsive UI', 'Clean Code']
+const heroStats = [
+  { label: 'Projects built', value: '05+' },
+  { label: 'Core stack', value: 'React / Java / Kotlin' },
+]
 
 function Hero() {
+  const shouldReduceMotion = useReducedMotion()
+
   return (
-    <motion.div
+    <section
       id="home"
-      className="hero section-fade-in"
-      variants={staggerContainer(0.2, 0.1)}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: false, amount: 0.25 }}
+      className="section-block overflow-hidden pt-20 pb-28 sm:pt-24 sm:pb-32 lg:pt-24 lg:pb-28"
     >
-      <div className="hero-left">
-        <motion.p variants={textVariant(1.1)} className="hero-subtitle">
-          Crafting Interfaces • Building Experiences • Creating Impact
-        </motion.p>
-        <motion.h1 variants={textVariant(1.2)}>
-          <span>Hello, I'm Methma Sankalpani</span>
-        </motion.h1>
-        <p className="hero-tagline">
-           Software Engineering undergraduate crafting clean interfaces and
-          thoughtful user experiences.
-        </p>
+      <div className="section-shell relative">
+        <div className="pointer-events-none absolute left-1/2 top-10 -z-10 h-[20rem] w-[20rem] -translate-x-1/2 rounded-full bg-brand-400/10 blur-3xl" />
 
-        <p className="hero-description">
-          I enjoy turning ideas into reliable, user-friendly applications as I
-          grow as a developer. From{" "}
-          <span className="hero-highlight"> web apps</span> to
-          <span className="hero-highlight"> Android projects </span>, I
-          focus on clear structure, responsiveness, and writing code that is
-          easy to maintain and scale.
-        </p>
+        <div className="grid items-center gap-6 lg:grid-cols-[1.3fr_0.7fr] lg:gap-4">
+          <motion.div
+            initial="hidden"
+            animate="show"
+            variants={stagger(0.1, 0.08)}
+            className="space-y-3 lg:pr-2"
+          >
+            <motion.span variants={fadeUp()} className="section-label max-w-fit text-[0.65rem] sm:text-[0.72rem]">
+              Available for internships, freelance work, and collaborative builds
+            </motion.span>
 
-        <div className="hero-action">
-          <div className="hero-connect">
-            <AnchorLink className="anchor-link" offset={50} href="#contact">
-              Connect With Me
-            </AnchorLink>
-          </div>
+            <motion.p
+              variants={fadeUp(0.05)}
+              className="text-[10px] uppercase tracking-[0.22em] text-slate-400 sm:text-xs md:text-sm"
+            >
+              Full-Stack Developer / Software Engineering Undergraduate / Problem Solver
+            </motion.p>
 
-          <div className="hero-resume">
-            <a className="btn" href="/Methma_Sankalpani.pdf" download>
-              Download CV
-            </a>
-          </div>
+            <motion.h1
+              variants={fadeUp(0.1)}
+              className="max-w-[13ch] font-display text-3xl font-semibold leading-[1.02] text-white sm:text-4xl md:text-[3.4rem] lg:text-[3.9rem]"
+            >
+              Designing digital work that feels{' '}
+              <span className="gradient-text">alive, clear, and sharp.</span>
+            </motion.h1>
+
+            <motion.p
+              variants={fadeUp(0.16)}
+              className="max-w-xl text-sm leading-6 text-slate-200/90 sm:text-base lg:text-[1rem]"
+            >
+              I&apos;m Methma Sankalpani, a full-stack developer building complete web
+              applications with thoughtful design, strong structure, and practical
+              problem-solving.
+            </motion.p>
+
+            <motion.div
+              variants={fadeUp(0.22)}
+              className="flex flex-wrap gap-2 pt-1"
+            >
+              {highlights.map((item, index) => (
+                <motion.span
+                  key={item}
+                  whileHover={shouldReduceMotion ? undefined : { y: -3, scale: 1.03 }}
+                  transition={{ type: 'spring', stiffness: 320, damping: 22, delay: index * 0.03 }}
+                  className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs text-slate-200 sm:text-sm"
+                >
+                  {item}
+                </motion.span>
+              ))}
+            </motion.div>
+
+            <motion.div
+              variants={fadeUp(0.28)}
+              className="flex flex-col gap-3 pt-1 sm:flex-row"
+            >
+              <AnchorLink href="#work" offset={80} className="primary-button">
+                Explore projects
+              </AnchorLink>
+
+              <a className="secondary-button" href="/Methma_Sankalpani.pdf" download>
+                Download resume
+              </a>
+            </motion.div>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            animate="show"
+            variants={scaleIn(0.18)}
+            className="relative mx-auto flex w-full items-center justify-center lg:justify-end"
+          >
+            <motion.div
+              animate={
+                shouldReduceMotion
+                  ? undefined
+                  : {
+                      y: [0, -10, 0],
+                    }
+              }
+              transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+              className="relative"
+            >
+              <div className="absolute h-56 w-56 rounded-full bg-cyan-400/10 blur-3xl sm:h-64 sm:w-64" />
+              <motion.div
+                animate={shouldReduceMotion ? undefined : { rotate: 360 }}
+                transition={{ duration: 24, repeat: Infinity, ease: 'linear' }}
+                className="pointer-events-none absolute inset-[-1.35rem] rounded-full border border-dashed border-brand-400/25"
+              />
+              <img
+                src={hero}
+                alt="Portrait of Methma Sankalpani"
+                className="relative h-[230px] w-[230px] rounded-full object-cover object-top shadow-[0_20px_60px_rgba(0,0,0,0.42)] sm:h-[280px] sm:w-[280px] md:h-[320px] md:w-[320px] lg:h-[340px] lg:w-[340px]"
+              />
+
+              <motion.div
+                initial="hidden"
+                animate="show"
+                variants={stagger(0.08, 0.55)}
+                className="absolute -bottom-10 left-1/2 grid w-[min(92vw,22rem)] -translate-x-1/2 gap-3 sm:-bottom-6 sm:flex sm:flex-wrap sm:justify-center lg:w-[24rem]"
+              >
+                {heroStats.map((item) => (
+                  <motion.div
+                    key={item.label}
+                    variants={fadeUp()}
+                    className="w-full rounded-2xl border border-white/10 bg-[#08111d]/88 px-4 py-3 text-left shadow-[0_18px_40px_rgba(0,0,0,0.28)] backdrop-blur-xl sm:min-w-[10rem] sm:flex-1"
+                  >
+                    <p className="text-[11px] uppercase tracking-[0.22em] text-slate-500">{item.label}</p>
+                    <p className="mt-1 text-sm font-semibold text-white sm:text-base">{item.value}</p>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
-
-      <motion.div
-        variants={slideIn("right", "tween", 0.2, 1)}
-        className="hero-right"
-      >
-        <img src={hero} alt="Portrait of Methma Sankalpani" />
-      </motion.div>
-    </motion.div>
-  );
+    </section>
+  )
 }
 
-export default Hero;
+export default Hero
