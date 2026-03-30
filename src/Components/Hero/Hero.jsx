@@ -4,10 +4,6 @@ import hero from '../../assets/hero.jpg'
 import { fadeUp, scaleIn, stagger } from '../Animate/Animate'
 
 const highlights = ['Frontend & Backend', 'Responsive UI', 'Clean Code']
-const heroStats = [
-  { label: 'Projects built', value: '05+' },
-  { label: 'Core stack', value: 'React / Java / Kotlin' },
-]
 
 function Hero() {
   const shouldReduceMotion = useReducedMotion()
@@ -113,24 +109,6 @@ function Hero() {
                 alt="Portrait of Methma Sankalpani"
                 className="relative h-[230px] w-[230px] rounded-full object-cover object-top shadow-[0_20px_60px_rgba(0,0,0,0.42)] sm:h-[280px] sm:w-[280px] md:h-[320px] md:w-[320px] lg:h-[340px] lg:w-[340px]"
               />
-
-              <motion.div
-                initial="hidden"
-                animate="show"
-                variants={stagger(0.08, 0.55)}
-                className="absolute -bottom-10 left-1/2 grid w-[min(92vw,22rem)] -translate-x-1/2 gap-3 sm:-bottom-6 sm:flex sm:flex-wrap sm:justify-center lg:w-[24rem]"
-              >
-                {heroStats.map((item) => (
-                  <motion.div
-                    key={item.label}
-                    variants={fadeUp()}
-                    className="w-full rounded-2xl border border-white/10 bg-[#08111d]/88 px-4 py-3 text-left shadow-[0_18px_40px_rgba(0,0,0,0.28)] backdrop-blur-xl sm:min-w-[10rem] sm:flex-1"
-                  >
-                    <p className="text-[11px] uppercase tracking-[0.22em] text-slate-500">{item.label}</p>
-                    <p className="mt-1 text-sm font-semibold text-white sm:text-base">{item.value}</p>
-                  </motion.div>
-                ))}
-              </motion.div>
             </motion.div>
           </motion.div>
         </div>

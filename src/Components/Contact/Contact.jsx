@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { FaLinkedinIn, FaGithub, FaFacebookF, FaInstagram, FaEnvelope, FaPhone, FaLocationDot, FaFileArrowDown } from 'react-icons/fa6'
+import { FaLinkedinIn, FaGithub, FaFacebookF, FaInstagram, FaEnvelope, FaPhone, FaLocationDot } from 'react-icons/fa6'
 import { fadeUp, stagger, viewportOnce } from '../Animate/Animate'
 
 const contactDetails = [
@@ -53,18 +53,6 @@ const socialLinks = [
     icon: FaEnvelope,
     label: 'Email',
     href: 'mailto:methmagk@gmail.com',
-    featured: false,
-  },
-  {
-    icon: FaPhone,
-    label: 'Phone',
-    href: 'tel:0743301490',
-    featured: false,
-  },
-  {
-    icon: FaFileArrowDown,
-    label: 'Resume',
-    href: '/Methma_Sankalpani.pdf',
     featured: false,
   },
 ]
@@ -176,10 +164,6 @@ function Contact() {
                           ? 'text-[#1877F2]'
                           : item.label === 'Instagram'
                             ? 'text-[#E4405F]'
-                        : item.label === 'Phone'
-                          ? 'text-cyan-300'
-                          : item.label === 'Resume'
-                            ? 'text-amber-300'
                             : 'text-brand-300'
 
                     return (
