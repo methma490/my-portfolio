@@ -130,7 +130,7 @@ const tabData = {
     glow: 'rgba(52,211,153,0.15)',
     tabIcon: GraduationCap,
     items: [
-      { text: 'BSc (Hons) in Information Technology', icons: [] },
+      { text: 'B.Sc. (Hons.) IT specializing in Software Engineering', icons: [] },
       {
         text: 'Focused coursework in software engineering, web, database, and mobile development',
         icons: [
