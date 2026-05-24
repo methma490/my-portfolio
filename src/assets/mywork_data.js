@@ -17,7 +17,7 @@ const myworkData = [
     github: 'https://github.com/methma490/Smart-Healthcare-Platform',
   },
     {
-    id: 7,
+    id: 2,
     title: 'Clean Water & Sanitation Platform (Public Restroom)',
     description:
       'A MERN platform for staff management, work assignment, scheduling, status tracking, validations, and admin monitoring dashboards.',
