@@ -4,6 +4,7 @@ import hero from '../../assets/hero.jpg'
 import { fadeUp, scaleIn, stagger } from '../Animate/Animate'
 
 const highlights = ['Frontend & Backend', 'Responsive UI', 'Clean Code']
+const resumeHref = '/Methma_Sankalpani.pdf?v=20260524'
 
 function Hero() {
   const shouldReduceMotion = useReducedMotion()
@@ -75,7 +76,7 @@ function Hero() {
                 Explore projects
               </AnchorLink>
 
-              <a className="secondary-button" href="/Methma_Sankalpani.pdf" download>
+              <a className="secondary-button" href={resumeHref} download>
                 Download resume
               </a>
             </motion.div>

@@ -10,12 +10,14 @@ const navItems = [
   { label: 'Contact', href: '#contact' },
 ]
 
+const resumeHref = '/Methma_Sankalpani.pdf?v=20260524'
+
 const socialLinks = [
   { icon: FaLinkedinIn, href: 'https://www.linkedin.com/', label: 'LinkedIn', color: '#0A66C2' },
   { icon: FaGithub, href: 'https://github.com/methma490', label: 'GitHub', color: '#f8fafc' },
   { icon: FaInstagram, href: 'https://www.instagram.com/', label: 'Instagram', color: '#E4405F' },
   { icon: FaEnvelope, href: 'mailto:methmagk@gmail.com', label: 'Email', color: '#86efac' },
-  { icon: FaFileArrowDown, href: '/Methma_Sankalpani.pdf', label: 'Resume', color: '#fcd34d' },
+  { icon: FaFileArrowDown, href: resumeHref, label: 'Resume', color: '#fcd34d' },
 ]
 
 function Footer() {
