@@ -58,6 +58,35 @@
     background: rgba(34, 197, 94, 0.28);
     color: white;
   }
+
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(22, 101, 52, 0.95) rgba(2, 6, 23, 0.96);
+  }
+
+  body::-webkit-scrollbar {
+    width: 13px;
+  }
+
+  body::-webkit-scrollbar-track {
+    background: linear-gradient(180deg, rgba(2, 6, 23, 0.98), rgba(15, 23, 42, 0.98));
+    border-left: 1px solid rgba(148, 163, 184, 0.12);
+  }
+
+  body::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    border: 3px solid rgba(2, 6, 23, 0.98);
+    background: linear-gradient(180deg, rgba(22, 101, 52, 0.98), rgba(20, 83, 45, 0.98));
+    box-shadow: inset 0 0 0 1px rgba(134, 239, 172, 0.08);
+  }
+
+  body::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, rgba(34, 197, 94, 0.92), rgba(22, 101, 52, 0.98));
+  }
+
+  body::-webkit-scrollbar-corner {
+    background: rgba(2, 6, 23, 0.98);
+  }
 }
 
 @layer components {
