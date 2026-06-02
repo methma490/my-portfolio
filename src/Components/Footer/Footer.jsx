@@ -98,8 +98,7 @@ function Footer() {
           variants={fadeUp(0.1)}
           className="mt-6 flex flex-col gap-2 border-t border-white/8 pt-5 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between"
         >
-          <p>&copy; {new Date().getFullYear()} All rights reserved.</p>
-          <p>Built with React, Tailwind CSS, and Framer Motion.</p>
+         
         </motion.div>
       </div>
     </motion.footer>

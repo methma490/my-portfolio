@@ -43,43 +43,62 @@ const tabData = {
       {
         icons: [
           { name: 'react', variant: 'original', title: 'React' },
+          { name: 'nextjs', variant: 'original', title: 'Next.js', invert: true },
           { name: 'javascript', variant: 'original', title: 'JavaScript' },
+          { name: 'typescript', variant: 'original', title: 'TypeScript' },
           { name: 'html5', variant: 'original', title: 'HTML5' },
           { name: 'css3', variant: 'original', title: 'CSS3' },
+        ],
+      },
+      {
+        icons: [
           { name: 'tailwindcss', variant: 'original', title: 'Tailwind CSS' },
+          { name: 'bootstrap', variant: 'original', title: 'Bootstrap' },
           { name: 'vitejs', variant: 'original', title: 'Vite' },
+          { name: 'figma', variant: 'original', title: 'Figma' },
+          { name: 'vscode', variant: 'original', title: 'VS Code' },
+          { name: 'postman', variant: 'original', title: 'Postman' },
         ],
       },
       {
         icons: [
           { name: 'nodejs', variant: 'original', title: 'Node.js' },
           { name: 'express', variant: 'original', title: 'Express.js', invert: true },
-          { name: 'postman', variant: 'original', title: 'Postman' },
           { name: 'npm', variant: 'original', title: 'npm' },
           { name: 'json', variant: 'original', title: 'JSON' },
-          { name: 'vercel', variant: 'original', title: 'Vercel', invert: true },
-        ],
-      },
-      {
-        icons: [
           { name: 'mongodb', variant: 'original', title: 'MongoDB' },
           { name: 'mysql', variant: 'original', title: 'MySQL' },
-          { name: 'firebase', variant: 'plain', title: 'Firebase' },
-          { name: 'git', variant: 'original', title: 'Git' },
-          { name: 'github', variant: 'original', title: 'GitHub', invert: true },
-          { name: 'linux', variant: 'original', title: 'Linux' },
         ],
       },
       {
         icons: [
           { name: 'java', variant: 'original', title: 'Java' },
-          { name: 'kotlin', variant: 'original', title: 'Kotlin' },
-          { name: 'androidstudio', variant: 'original', title: 'Android Studio' },
+          { name: 'python', variant: 'original', title: 'Python' },
+          { name: 'c', variant: 'original', title: 'C' },
           { name: 'cplusplus', variant: 'original', title: 'C++' },
-          { name: 'figma', variant: 'original', title: 'Figma' },
-          { name: 'photoshop', variant: 'original', title: 'Photoshop' },
+          { name: 'php', variant: 'original', title: 'PHP' },
+          { name: 'kotlin', variant: 'original', title: 'Kotlin' },
         ],
       },
+      {
+        icons: [
+          { name: 'android', variant: 'original', title: 'Android' },
+          { name: 'androidstudio', variant: 'original', title: 'Android Studio' },
+          { name: 'docker', variant: 'original', title: 'Docker' },
+          { name: 'kubernetes', variant: 'original', title: 'Kubernetes' },
+          { name: 'vercel', variant: 'original', title: 'Vercel', invert: true },
+          { name: 'git', variant: 'original', title: 'Git' },
+        ],
+      },
+      {
+        icons: [
+          { name: 'github', variant: 'original', title: 'GitHub', invert: true },
+          { name: 'eclipse', variant: 'original', title: 'Eclipse' },
+          { name: 'intellij', variant: 'original', title: 'IntelliJ IDEA' },
+        ],
+        
+      },
+      
     ],
   },
   experience: {
@@ -130,27 +149,16 @@ const tabData = {
     glow: 'rgba(52,211,153,0.15)',
     tabIcon: GraduationCap,
     items: [
-      { text: 'B.Sc. (Hons.) IT specializing in Software Engineering', icons: [] },
       {
-        text: 'Focused coursework in software engineering, web, database, and mobile development',
-        icons: [
-          { name: 'react', variant: 'original', title: 'React' },
-          { name: 'mysql', variant: 'original', title: 'MySQL' },
-          { name: 'mongodb', variant: 'original', title: 'MongoDB' },
-          { name: 'kotlin', variant: 'original', title: 'Kotlin' },
-        ],
+        text: 'Sri Lanka Institute of Information Technology (SLIIT) — 2023–Present',
+        icons: [],
       },
-      {
-        text: 'Continuous self-learning in React, frontend polish, and UI improvement',
-        icons: [
-          { name: 'react', variant: 'original', title: 'React' },
-          { name: 'tailwindcss', variant: 'original', title: 'Tailwind CSS' },
-        ],
-      },
-      {
-        text: 'Strong interest in turning coursework into better portfolio-quality work',
-        icons: [{ name: 'github', variant: 'original', title: 'GitHub' }],
-      },
+      { text: 'B.Sc. (Hons.) in Information Technology specializing in Software Engineering', icons: [] },
+     
+
+      { text: 'Dharmasoka College, Ambalangoda — 2019–2021', icons: [] },
+      { text: 'G.C.E. Advanced Level — Physical Science Stream', icons: [] },
+      
     ],
   },
   background: {
@@ -415,7 +423,7 @@ export default function About() {
                             </div>
                           )}
 
-                          {activeTab !== 'skills' && (
+                          {text && (
                             <div className="flex items-start gap-3">
                               <span
                                 className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-lg text-[10px] font-bold"
