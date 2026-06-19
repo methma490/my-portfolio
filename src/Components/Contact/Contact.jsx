@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react'
+import emailjs from 'emailjs-com'
 import {
   FaEnvelope,
   FaFacebookF,
@@ -54,6 +56,88 @@ const socialLinks = [
 ]
 
 function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  })
+  const [loading, setLoading] = useState(false)
+  const [submitted, setSubmitted] = useState(false)
+  const [error, setError] = useState('')
+
+  useEffect(() => {
+    // Initialize EmailJS with your public key
+    // Get your public key from: https://dashboard.emailjs.com/admin/account
+    emailjs.init('8uLyiRw4J1_1A7ATp')
+  }, [])
+
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }))
+    setError('')
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+
+    // Validation
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+      setError('Please fill in all fields')
+      return
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      setError('Please enter a valid email address')
+      return
+    }
+
+    setLoading(true)
+    setError('')
+
+    try {
+      // Send email using EmailJS
+      // You'll need to:
+      // 1. Create a service on EmailJS dashboard
+      // 2. Create an email template
+      // 3. Add the service_id and template_id below
+      await emailjs.send(
+        'service_5j12kya', // Replace with your EmailJS service ID
+        'template_mq58q0g', // Replace with your EmailJS template ID
+        {
+          to_email: 'methmagk@gmail.com', // Your email
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+        }
+      )
+
+      setSubmitted(true)
+      setFormData({ name: '', email: '', message: '' })
+
+      // Reset success message after 5 seconds
+      setTimeout(() => setSubmitted(false), 5000)
+    } catch (err) {
+      console.error('EmailJS error details:', err)
+      
+      // Check if keys are not set up
+      if (
+        err.text?.includes('unauthorized') ||
+        err.status === 403
+      ) {
+        setError(
+          'Email configuration missing. Please check your EmailJS keys in Contact.jsx'
+        )
+      } else {
+        setError('Failed to send message. Please try again later.')
+      }
+    } finally {
+      setLoading(false)
+    }
+  }
+
   return (
     <section id="contact" className="section-block">
       <div className="section-shell">
@@ -129,7 +213,7 @@ function Contact() {
                 </h2>
               </div>
 
-              <form className="space-y-4">
+              <form className="space-y-4" onSubmit={handleSubmit}>
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div>
                     <label
@@ -143,6 +227,8 @@ function Contact() {
                       name="name"
                       type="text"
                       placeholder="Enter your name"
+                      value={formData.name}
+                      onChange={handleChange}
                       className="field"
                     />
                   </div>
@@ -159,6 +245,8 @@ function Contact() {
                       name="email"
                       type="email"
                       placeholder="Enter your email"
+                      value={formData.email}
+                      onChange={handleChange}
                       className="field"
                     />
                   </div>
@@ -176,12 +264,30 @@ function Contact() {
                     name="message"
                     rows="6"
                     placeholder="Tell me about your idea, project, or opportunity"
+                    value={formData.message}
+                    onChange={handleChange}
                     className="field resize-none"
                   />
                 </div>
 
-                <button type="submit" className="primary-button">
-                  <span className="mr-2">Send message</span>
+                {error && (
+                  <div className="rounded-lg border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-400">
+                    {error}
+                  </div>
+                )}
+
+                {submitted && (
+                  <div className="rounded-lg border border-green-500/30 bg-green-500/10 px-4 py-3 text-sm text-green-400">
+                    ✓ Message sent successfully! I'll get back to you soon.
+                  </div>
+                )}
+
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="primary-button disabled:opacity-60 disabled:cursor-not-allowed"
+                >
+                  <span className="mr-2">{loading ? 'Sending...' : 'Send message'}</span>
                   <FaPaperPlane className="h-4 w-4" />
                 </button>
               </form>

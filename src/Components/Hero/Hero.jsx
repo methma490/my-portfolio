@@ -25,7 +25,7 @@ function Hero() {
             className="space-y-3 lg:pr-2"
           >
             <motion.span variants={fadeUp()} className="section-label max-w-fit text-[0.65rem] sm:text-[0.72rem]">
-              Available for internships, freelance work, and collaborative builds
+              Available for internships
             </motion.span>
 
             <motion.p
